@@ -1,0 +1,22 @@
+server:
+  port: 8083
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: ceoi7Hsz19Dsg7njujtu
+        server-addr: home-router.hua-juan.top:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user_route
+          uri: lb://user-consumer
+          predicates:
+            - Path=/user/**
+  application:
+    name: gateway

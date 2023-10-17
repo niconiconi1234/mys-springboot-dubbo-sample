@@ -1,0 +1,23 @@
+dubbo:
+  application:
+    name: user-provider-dubbo
+    qos-port: 22222
+    serialize-check-status: WARN
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://home-router.hua-juan.top:8848
+    username: nacos
+    password: ceoi7Hsz19Dsg7njujtu
+server:
+  port: 8081
+spring:
+  application:
+    name: user-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: home-router.hua-juan.top:8848
+        username: nacos
+        password: ceoi7Hsz19Dsg7njujtu
